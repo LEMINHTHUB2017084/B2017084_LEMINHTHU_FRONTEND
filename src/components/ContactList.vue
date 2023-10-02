@@ -8,7 +8,7 @@ export default {
     methods: {
         updateActiveIndex(index) {
             this.$emit("update:activeIndex", index);
-        }
+        },
     }
 };
 </script>
@@ -26,3 +26,10 @@ export default {
         </li>
     </ul>
 </template>
+
+<style>
+img {
+    width: 60px;
+    border-radius: 100px;
+}
+</style>

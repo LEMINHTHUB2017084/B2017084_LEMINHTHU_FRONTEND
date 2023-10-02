@@ -1,5 +1,5 @@
 <template>
-    <div class="page row>
+    <div class="page row">
         <div class="col-md-10">
             <InputSearch v-model="searchText" />
         </div>
@@ -8,11 +8,8 @@
                 Danh bạ
                 <i class="fas fa-address-book"></i>
             </h4>
-            <ContactList 
-                v-if="filteredContactsCount > 0"
-                :contacts="filteredContacts"
-                v-model:activeIndex="activeIndex"
-            />
+            <ContactList v-if="filteredContactsCount > 0" :contacts="filteredContacts"
+                v-model:activeIndex="activeIndex" />
             <p v-else>Không có liên hệ nào.</p>
 
             <div class="mt-3 row justify-content-around align-items-center">
@@ -24,11 +21,7 @@
                     <i class="fas fa-plus"></i> Thêm mới
                 </button>
 
-                <button 
-                    class="btn btn-sm btn-danger"
-                    @click="removeAllContacts"
-                >
-
+                <button class="btn btn-sm btn-danger" @click="removeAllContacts">
                     <i class="fas fa-trash"></i> Xóa tất cả
                 </button>
             </div>
@@ -49,7 +42,7 @@
 import ContactCard from "@/components/ContactCard.vue";
 import InputSearch from "@/components/InputSearch.vue";
 import ContactList from "@/components/ContactList.vue";
-import ContactService from "@/services/contact.services";
+import ContactService from "@/services/contact.service";
 
 export default {
     components: {
@@ -88,7 +81,7 @@ export default {
             );
         },
         activeContact() {
-            if (this.activeIndex < 0) return null;
+            if(this.activeIndex < 0) return null;
             return this.filteredContacts[this.activeIndex];
         },
         filteredContactsCount() {
