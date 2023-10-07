@@ -34,16 +34,6 @@
             <ErrorMessage name="address" class="error-feedback" />
         </div>
         <div class="form-group">
-            <label for="address">Địa chỉ</label>
-            <Field
-                name="address"
-                type="text"
-                class="form-control"
-                v-model="contactLocal.address"
-            />
-            <ErrorMessage name="address" class="error-feedback" />
-        </div>
-        <div class="form-group">
             <label for="phone">Điện thoại</label>
             <Field
                 name="phone"
